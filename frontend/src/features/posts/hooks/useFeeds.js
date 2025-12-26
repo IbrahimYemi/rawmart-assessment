@@ -3,7 +3,7 @@ import { postService } from '../../../services/postService';
 import { APP_CONSTANTS } from '../../../utils/appConstants';
 
 const INITIAL_LIMIT = 9;
-const NEXT_LIMIT = 6;
+const NEXT_LIMIT = 9;
 
 export const useFeeds = ({ id = null, route = 'feeds', search = null } = {}) => {
 
