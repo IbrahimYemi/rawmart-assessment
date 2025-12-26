@@ -1,6 +1,7 @@
 FROM php:8.4-fpm
 
 RUN apt-get update && apt-get install -y \
+    netcat-openbsd \
     git \
     curl \
     unzip \
@@ -39,8 +40,7 @@ COPY docker-entrypoint-worker.sh /usr/local/bin/entrypoint-worker.sh
 RUN chmod +x /usr/local/bin/entrypoint-app.sh /usr/local/bin/entrypoint-worker.sh
 
 RUN mkdir -p storage bootstrap/cache \
-    && chown -R www-data:www-data storage bootstrap/cache \
-    && chmod -R 775 storage bootstrap/cache
+    && chown -R www-data:www-data storage bootstrap/cache
 
 USER www-data
 
