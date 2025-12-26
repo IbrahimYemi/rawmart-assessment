@@ -1,0 +1,1 @@
+export const fileUploadConfig = { headers: { 'Content-Type': 'multipart/form-data' } };

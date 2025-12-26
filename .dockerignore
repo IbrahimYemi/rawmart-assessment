@@ -1,0 +1,55 @@
+# =========================
+# Environment & secrets
+# =========================
+.env
+.env.*
+*.env
+
+# =========================
+# Git & VCS
+# =========================
+.git
+.gitignore
+
+# =========================
+# OS / Editor files
+# =========================
+.DS_Store
+Thumbs.db
+.vscode
+.idea
+
+# =========================
+# Logs & cache
+# =========================
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+backend/storage/logs
+backend/storage/framework/cache
+backend/storage/framework/sessions
+backend/storage/framework/views
+backend/bootstrap/cache
+backend/public/storage
+backend/storage/debugbar
+
+# =========================
+# Dependencies (re-built in image)
+# =========================
+frontend/node_modules
+backend/vendor
+
+# =========================
+# Tests & local tooling
+# =========================
+backend/tests
+docker-compose*.yml
+README.md
+
+# =========================
+# Misc
+# =========================
+coverage
+.tmp
+.cache

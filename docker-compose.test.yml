@@ -1,0 +1,28 @@
+services:
+  backend-test:
+    build: ./backend
+    volumes:
+    - ./backend:/var/www
+    env_file:
+      - ./backend/.env.testing
+    depends_on:
+      - mysql-test
+      - redis-test
+    networks:
+      - test-network
+
+  mysql-test:
+    image: mysql:8
+    environment:
+      - MYSQL_DATABASE=testing
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+    networks:
+      - test-network
+
+  redis-test:
+    image: redis:alpine
+    networks:
+      - test-network
+
+networks:
+  test-network:

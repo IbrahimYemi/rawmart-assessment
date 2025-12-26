@@ -1,0 +1,8 @@
+Redis::set('test', 'ok');
+>>> Redis::set('test', 'ok');
+cache()->store('redis')->put('test', 'ok', 60);
+cache()->store('redis')->get('test');
+use Illuminate\Support\Facades\Redis;
+Redis::connection()->set('test', 'ok');
+Redis::connection()->get('test');
+exit
