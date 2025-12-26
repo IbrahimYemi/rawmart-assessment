@@ -91,6 +91,11 @@ return Application::configure(basePath: dirname(__DIR__))
             return response()->json([
                 'status' => false,
                 'message' => 'Seems we have broken something, try again later!',
+                // 'error'  => [
+                //     'message' => $e->getMessage(), 
+                //     'file' => $e->getFile(),
+                //     'line' => $e->getLine(),
+                // ],
             ], 500);
         });
     })

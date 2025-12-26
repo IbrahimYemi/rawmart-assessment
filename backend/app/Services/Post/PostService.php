@@ -93,7 +93,7 @@ class PostService
 
             $post->update($data);
 
-            return $this->updateTag($post, $data['tags']);
+            return $this->updateTag($post, $data['tags'] ?? []);
         });
     }
     
@@ -124,7 +124,7 @@ class PostService
         return $post->delete();
     }
 
-    protected function authorize(string $ability, Post $post = null): void
+    protected function authorize(string $ability, ?Post $post = null): void
     {
         Gate::authorize($ability, $post);
     }

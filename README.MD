@@ -77,8 +77,8 @@ docker-compose exec backend php artisan jwt:secret
 ## Running Tests
 
 ```bash
-docker-compose -f docker-compose.test.yml -p rawmart-test up -d
-docker-compose -f docker-compose.test.yml -p rawmart-test run --rm backend-test php artisan migrate --env=testing
+docker-compose -f docker-compose.test.yml -p rawmart-test up -d --build
+docker-compose -f docker-compose.test.yml -p rawmart-test exec backend-test php artisan migrate
 docker-compose -f docker-compose.test.yml -p rawmart-test exec backend-test php artisan test
 docker-compose -f docker-compose.test.yml -p rawmart-test down -v
 ```

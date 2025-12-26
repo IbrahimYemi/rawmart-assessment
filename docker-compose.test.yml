@@ -1,8 +1,9 @@
 services:
   backend-test:
-    build: ./backend
-    volumes:
-    - ./backend:/var/www
+    entrypoint: ["sh", "-c", "sleep infinity"]
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.test
     env_file:
       - ./backend/.env.testing
     depends_on:
@@ -14,8 +15,8 @@ services:
   mysql-test:
     image: mysql:8
     environment:
-      - MYSQL_DATABASE=testing
-      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      MYSQL_DATABASE: testing
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
     networks:
       - test-network
 
